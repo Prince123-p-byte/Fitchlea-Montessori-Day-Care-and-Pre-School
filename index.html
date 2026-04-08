@@ -2,419 +2,711 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitchlea Montessori Day Care and Pre-School | Where Learning is a Celebration</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Grandstander:wght@400;700;900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Fitchlea-Montessori-Day-Care-and-Pre-School
+ | Where Wonder Blooms</title>
+    <!-- Google Fonts & Smooth Scroll -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        :root {
-            --sky-blue: #00D2FF;
-            --grass-green: #7ED957;
-            --sun-yellow: #FFDE59;
-            --berry-pink: #FF66C4;
-            --magic-purple: #8C52FF;
-            --orange-punch: #FF914D;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Fredoka', sans-serif;
-            background-color: #f0faff;
-            color: #2d3436;
+            font-family: 'Inter', sans-serif;
+            background-color: #fefaf5;
+            color: #2e2a28;
+            line-height: 1.5;
             overflow-x: hidden;
         }
 
-        h1, h2, h3 {
-            font-family: 'Grandstander', cursive;
-            line-height: 1.1;
+        /* Custom smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
         }
 
-        /* Storybook Background Pattern */
-        .bg-pattern {
-            background-image: radial-gradient(#ffffff 2px, transparent 2px);
-            background-size: 30px 30px;
+        /* playful color variables */
+        :root {
+            --primary: #f7bc45;    /* warm sun */
+            --secondary: #f4a261;  /* soft apricot */
+            --accent: #e76f51;     /* terracotta */
+            --soft-green: #b7e4c7;
+            --deep-teal: #2a9d8f;
+            --bg-cream: #fff9ef;
+            --card-white: #ffffff;
+            --soft-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.02);
+            --hover-lift: 0 25px 35px -16px rgba(0, 0, 0, 0.12);
         }
 
-        /* Custom Organic Shapes */
-        .squircle {
-            border-radius: 60px 20px 60px 20px;
+        /* container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
         }
 
-        .blob-1 { border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%; }
-        .blob-2 { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-
-        /* Floating Nav */
-        .nav-cloud {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 50px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border: 4px solid #fff;
+        /* typography */
+        h1, h2, h3, .logo {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.01em;
         }
 
-        /* Animations */
-        @keyframes float {
-            0% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(2deg); }
-            100% { transform: translateY(0px) rotate(0deg); }
+        h2 {
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+            color: #2b2d2a;
         }
-        .animate-float { animation: float 5s ease-in-out infinite; }
 
-        @keyframes wiggle {
-            0%, 100% { transform: rotate(-3deg); }
-            50% { transform: rotate(3deg); }
+        .section-subhead {
+            font-size: 1.2rem;
+            color: #5f6c5b;
+            max-width: 620px;
+            margin-bottom: 3rem;
+            font-weight: 400;
         }
-        .hover-wiggle:hover { animation: wiggle 0.3s ease-in-out infinite; }
 
-        .paper-shadow {
-            box-shadow: 8px 8px 0px rgba(0,0,0,0.05);
+        /* buttons */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: #2d3e2b;
+            font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.02);
         }
-        
-        .grad-pink { background: linear-gradient(135deg, #FF66C4 0%, #FF914D 100%); }
-        .grad-blue { background: linear-gradient(135deg, #00D2FF 0%, #3a7bd5 100%); }
-        .grad-green { background: linear-gradient(135deg, #7ED957 0%, #2ecc71 100%); }
 
-        .section-curve {
-            position: absolute;
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: #3a4a36;
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: #2c4129;
+            transform: translateY(-3px);
+        }
+
+        .btn-primary:hover {
+            background-color: #f5ac2f;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 22px -12px rgba(247, 188, 69, 0.4);
+        }
+
+        /* header / navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.9rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #f7bc45, #e76f51);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--deep-teal);
+            background: none;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #4a5347;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* hero section */
+        .hero {
+            padding: 60px 0 80px 0;
+            background: radial-gradient(circle at 80% 20%, rgba(247, 188, 69, 0.08), rgba(255,245,235,0.6));
+        }
+
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1.2;
+        }
+
+        .hero-badge {
+            background: #e9f5e9;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #2a9d8f;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.7rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: #2c3e2b;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #4d5c49;
+            margin-bottom: 2rem;
+            max-width: 90%;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .hero-image img {
             width: 100%;
-            height: 80px;
-            background: #fff;
-            clip-path: ellipse(60% 100% at 50% 100%);
-            bottom: -1px;
+            border-radius: 48px 48px 48px 24px;
+            box-shadow: var(--soft-shadow);
+            transition: transform 0.3s ease;
         }
 
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
+        .hero-image img:hover {
+            transform: scale(1.01);
         }
-        .scroll-reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+
+        /* floating playful shapes */
+        .floating-shape {
+            position: absolute;
+            z-index: -1;
+        }
+
+        /* features cards */
+        .features {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 20px;
+        }
+
+        .feature-card {
+            background: var(--card-white);
+            border-radius: 2rem;
+            padding: 2rem 1.8rem;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: var(--soft-shadow);
+            border: 1px solid rgba(247, 188, 69, 0.2);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--hover-lift);
+            border-color: var(--primary);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            background: #fef2e0;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            margin: 0 auto 1.5rem;
+            color: var(--accent);
+        }
+
+        .feature-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            color: #5f6b5a;
+        }
+
+        /* about section with modern split */
+        .about-section {
+            padding: 80px 0;
+            background: var(--bg-cream);
+        }
+
+        .about-grid {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 2.3rem;
+        }
+
+        .about-list {
+            margin: 1.5rem 0;
+            list-style: none;
+        }
+
+        .about-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .about-list i {
+            color: var(--deep-teal);
+            font-size: 1.4rem;
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: var(--soft-shadow);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: 0.3s;
+        }
+
+        /* programs section */
+        .programs {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .program-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .program-item {
+            background: #fef9ef;
+            border-radius: 2rem;
+            padding: 2rem;
+            flex: 1 1 280px;
+            transition: all 0.25s;
+            border: 1px solid #ffe3bf;
+        }
+
+        .program-item:hover {
+            background: #fff6ea;
+            transform: scale(1.02);
+        }
+
+        .program-age {
+            display: inline-block;
+            background: var(--primary);
+            border-radius: 40px;
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        /* gallery / moments */
+        .gallery {
+            padding: 70px 0;
+            background: #fef7ed;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-card {
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 12px 24px -12px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            background: white;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            transition: 0.4s;
+            display: block;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.03);
+        }
+
+        .caption {
+            padding: 1rem;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* cta section */
+        .cta {
+            background: linear-gradient(105deg, #2a9d8f 0%, #2c6e5c 100%);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+            border-radius: 48px;
+            margin: 60px auto;
+        }
+
+        .cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            max-width: 550px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .cta .btn {
+            background: white;
+            color: #2a9d8f;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .cta .btn:hover {
+            background: #fef1d6;
+            transform: translateY(-3px);
+        }
+
+        /* footer */
+        footer {
+            background: #1f2a1e;
+            color: #d9e0d4;
+            padding: 48px 0 24px;
+            border-radius: 32px 32px 0 0;
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col p {
+            max-width: 260px;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            color: #f7bc45;
+            margin-right: 1rem;
+            font-size: 1.4rem;
+            transition: 0.2s;
+        }
+
+        .social-icons a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #3a4636;
+            font-size: 0.8rem;
+        }
+
+        /* responsive */
+        @media (max-width: 860px) {
+            .container {
+                padding: 0 24px;
+            }
+            .hero-content h1 {
+                font-size: 2.6rem;
+            }
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .nav-links {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero-grid, .about-grid {
+                flex-direction: column;
+            }
+            .hero-content p {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 560px) {
+            h2 {
+                font-size: 1.9rem;
+            }
+            .btn {
+                padding: 10px 22px;
+            }
+        }
+
+        /* decorative elements */
+        .wave-bg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            pointer-events: none;
         }
     </style>
 </head>
-<body class="bg-pattern">
+<body>
 
-    <!-- Floating Navbar -->
-    <nav class="fixed top-6 left-0 right-0 z-50 px-4">
-        <div class="max-w-6xl mx-auto nav-cloud px-6 py-3 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <div class="w-12 h-12 bg-sun-yellow rounded-full flex items-center justify-center text-2xl shadow-inner animate-pulse">
-                    🎨
-                </div>
-                <span class="text-2xl font-black text-magic-purple tracking-tighter">Fitchlea Montessori Day Care and Pre-School</span>
-            </div>
-            
-            <div class="hidden lg:flex gap-8 font-bold text-gray-600">
-                <a href="#home" class="hover:text-berry-pink transition">Home</a>
-                <a href="#about" class="hover:text-grass-green transition">The Story</a>
-                <a href="#curriculum" class="hover:text-sky-blue transition">Curriculum</a>
-                <a href="#admissions" class="hover:text-orange-punch transition">Enroll</a>
-            </div>
-
-            <a href="#contact" class="grad-pink text-white px-8 py-3 rounded-full font-black shadow-lg hover:scale-110 transition active:scale-95">
-                Apply Now <i class="fas fa-magic ml-2"></i>
-            </a>
+<!-- Navigation -->
+<div class="container">
+    <div class="navbar">
+        <div class="logo">🌼 Fitchlea Montessori <span>Day-Care and Pre-School</span></div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#programs">Programs</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact" class="btn-outline btn" style="padding: 6px 18px;">Contact</a>
         </div>
-    </nav>
+    </div>
+</div>
 
-    <!-- Hero Section -->
-    <section id="home" class="relative pt-44 pb-32 px-4 overflow-hidden">
-        <!-- Background Elements -->
-        <div class="absolute -top-20 -left-20 w-96 h-96 bg-sun-yellow rounded-full opacity-10 animate-float"></div>
-        <div class="absolute top-1/2 -right-20 w-80 h-80 bg-magic-purple rounded-full opacity-10 animate-float" style="animation-delay: 2s"></div>
-
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-            <div class="text-center lg:text-left">
-                <span class="bg-white border-4 border-berry-pink text-berry-pink px-6 py-2 rounded-full font-bold inline-block mb-6 shadow-sm">
-                    ✨ THE BRIGHTEST START FOR YOUR CHILD
-                </span>
-                <h1 class="text-6xl md:text-8xl font-black text-gray-800 mb-8">
-                    Discover <br>
-                    <span class="text-sky-blue">The Magic</span> <br>
-                    <span class="text-grass-green">Of Learning</span>
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed max-w-xl">
-                    Where curious minds become brave explorers through art, play, and nature. Join the most colorful community in town!
-                </p>
-                <div class="flex flex-wrap justify-center lg:justify-start gap-6">
-                    <button class="grad-blue text-white px-10 py-5 rounded-3xl font-black text-xl shadow-xl hover:translate-y-[-5px] transition">
-                        Take a Tour 🎈
-                    </button>
-                    <div class="flex items-center gap-4 text-gray-400">
-                        <div class="flex -space-x-3">
-                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" class="w-12 h-12 rounded-full border-4 border-white bg-blue-100" />
-                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Aneka" class="w-12 h-12 rounded-full border-4 border-white bg-green-100" />
-                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Jack" class="w-12 h-12 rounded-full border-4 border-white bg-yellow-100" />
-                        </div>
-                        <span class="text-sm font-bold">500+ Happy Explorers</span>
-                    </div>
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fas fa-seedling"></i> Enroll for 2025-26</div>
+                <h1>Where little minds grow & big dreams begin</h1>
+                <p>Playful learning, nurturing environment, and joyful discovery — giving your child the best start in life.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary">Schedule a Tour <i class="fas fa-arrow-right"></i></a>
+                    <a href="#" class="btn-outline btn">Learn More</a>
                 </div>
             </div>
-
-            <div class="relative">
-                <div class="blob-1 grad-green absolute inset-0 rotate-12 scale-105 shadow-2xl"></div>
-                <div class="relative z-10 overflow-hidden squircle border-[12px] border-white shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1502086223501-7ea2443d844d?auto=format&fit=crop&q=80&w=800" alt="Kids playing" class="w-full h-[500px] object-cover">
-                </div>
-                <!-- Mini Badges -->
-                <div class="absolute -bottom-10 -left-10 bg-sun-yellow p-6 rounded-3xl shadow-xl z-20 animate-float border-4 border-white">
-                    <div class="text-4xl text-center">🏆</div>
-                    <p class="text-sm font-black text-gray-800 mt-2">BEST IN<br>CITY 2024</p>
-                </div>
-                <div class="absolute top-10 -right-10 bg-white p-6 rounded-full shadow-xl z-20 animate-float border-4 border-sky-blue" style="animation-delay: 1.5s">
-                    <div class="text-2xl font-black text-sky-blue">STEAM</div>
-                </div>
+            <div class="hero-image">
+                <img src="https://placehold.co/600x500/fef2e0/d49c3f?text=Happy+Kids+Playing" alt="Happy preschoolers playing">
+                <!-- in real use replace with actual image, using nice placeholder style -->
             </div>
         </div>
-        <div class="section-curve"></div>
-    </section>
+    </div>
+</section>
 
-    <!-- Why Us (The Garden) -->
-    <section id="about" class="bg-white py-32 px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20 scroll-reveal">
-                <h2 class="text-5xl md:text-6xl font-black mb-6">A Happy Place to <span class="text-orange-punch">Grow</span></h2>
-                <p class="text-gray-500 text-xl">We believe in messy hands, loud laughter, and big dreams.</p>
+<!-- Features -->
+<section class="features">
+    <div class="container">
+        <div style="text-align: center;">
+            <h2>Why families trust us</h2>
+            <p class="section-subhead">A holistic, play-based approach that sparks curiosity and confidence.</p>
+        </div>
+        <div class="cards-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-heart"></i></div>
+                <h3>Nurturing Care</h3>
+                <p>Low student-teacher ratios, certified early childhood educators who truly care.</p>
             </div>
-
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="group scroll-reveal" style="transition-delay: 0.1s">
-                    <div class="bg-blue-50 p-10 rounded-[50px] text-center border-4 border-transparent group-hover:border-sky-blue transition duration-500">
-                        <div class="w-24 h-24 bg-sky-blue text-white text-5xl flex items-center justify-center rounded-full mx-auto mb-8 shadow-lg group-hover:scale-110 transition">
-                            🧩
-                        </div>
-                        <h3 class="text-2xl font-black mb-4">Mind Gym</h3>
-                        <p class="text-gray-600">Strategic play and puzzle solving that sparks neural connections early.</p>
-                    </div>
-                </div>
-                <div class="group scroll-reveal" style="transition-delay: 0.2s">
-                    <div class="bg-pink-50 p-10 rounded-[50px] text-center border-4 border-transparent group-hover:border-berry-pink transition duration-500">
-                        <div class="w-24 h-24 bg-berry-pink text-white text-5xl flex items-center justify-center rounded-full mx-auto mb-8 shadow-lg group-hover:scale-110 transition">
-                            🎭
-                        </div>
-                        <h3 class="text-2xl font-black mb-4">Creative Arts</h3>
-                        <p class="text-gray-600">Unleashing inner Picassos with music, dance, and finger painting.</p>
-                    </div>
-                </div>
-                <div class="group scroll-reveal" style="transition-delay: 0.3s">
-                    <div class="bg-green-50 p-10 rounded-[50px] text-center border-4 border-transparent group-hover:border-grass-green transition duration-500">
-                        <div class="w-24 h-24 bg-grass-green text-white text-5xl flex items-center justify-center rounded-full mx-auto mb-8 shadow-lg group-hover:scale-110 transition">
-                            🌳
-                        </div>
-                        <h3 class="text-2xl font-black mb-4">Nature Labs</h3>
-                        <p class="text-gray-600">Outdoor classrooms where kids learn the magic of biology firsthand.</p>
-                    </div>
-                </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-paintbrush"></i></div>
+                <h3>Creative Curriculum</h3>
+                <p>Art, music, storytelling & STEM — learning through exploration and play.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                <h3>Outdoor Wonder</h3>
+                <p>Nature-based play garden, safe equipment & daily outdoor adventures.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-hands-helping"></i></div>
+                <h3>Parent Partnership</h3>
+                <p>Daily updates, workshops, and a supportive community for families.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Magic Curriculum -->
-    <section id="curriculum" class="py-32 px-4 bg-[#7ED957] relative">
-        <!-- Top Wave Overlay -->
-        <svg class="absolute top-0 left-0 w-full rotate-180" viewBox="0 0 1440 100" fill="none">
-            <path d="M0 0H1440V100C1440 100 1080 0 720 0C360 0 0 100 0 100V0Z" fill="white"/>
-        </svg>
-
-        <div class="max-w-7xl mx-auto relative z-10">
-            <div class="text-white text-center mb-20 scroll-reveal">
-                <h2 class="text-6xl font-black mb-4">Our Magic Curriculum</h2>
-                <p class="text-2xl opacity-90">Every day is a new adventure waiting to happen!</p>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6 scroll-reveal">
-                    <div class="bg-white p-8 rounded-[40px] paper-shadow flex items-center gap-6 hover:translate-x-4 transition cursor-pointer">
-                        <div class="w-20 h-20 grad-pink rounded-3xl flex items-center justify-center text-3xl shadow-lg">👶</div>
-                        <div>
-                            <h4 class="text-2xl font-black text-berry-pink">Nursery (2-3 Years)</h4>
-                            <p class="text-gray-500">Focus on socialization, speech, and sensory motor skills.</p>
-                        </div>
-                    </div>
-                    <div class="bg-white p-8 rounded-[40px] paper-shadow flex items-center gap-6 hover:translate-x-4 transition cursor-pointer">
-                        <div class="w-20 h-20 grad-blue rounded-3xl flex items-center justify-center text-3xl shadow-lg">🎨</div>
-                        <div>
-                            <h4 class="text-2xl font-black text-sky-blue">Junior KG (3-4 Years)</h4>
-                            <p class="text-gray-500">Introduction to letters, numbers, and emotional intelligence.</p>
-                        </div>
-                    </div>
-                    <div class="bg-white p-8 rounded-[40px] paper-shadow flex items-center gap-6 hover:translate-x-4 transition cursor-pointer">
-                        <div class="w-20 h-20 grad-green rounded-3xl flex items-center justify-center text-3xl shadow-lg">🚀</div>
-                        <div>
-                            <h4 class="text-2xl font-black text-grass-green">Senior KG (4-5 Years)</h4>
-                            <p class="text-gray-500">Advanced literacy, logic, and primary school readiness.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="relative scroll-reveal">
-                    <div class="blob-2 bg-sun-yellow w-full h-full absolute inset-0 rotate-6"></div>
-                    <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&q=80&w=800" alt="Learning" class="relative z-10 squircle border-[10px] border-white shadow-2xl h-[450px] w-full object-cover">
-                </div>
-            </div>
-        </div>
-        
-        <!-- Bottom Wave -->
-        <svg class="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 100" fill="none">
-            <path d="M0 100H1440V0C1440 0 1080 100 720 100C360 100 0 0 0 0V100Z" fill="#8C52FF"/>
-        </svg>
-    </section>
-
-    <!-- Gallery of Wonders -->
-    <section class="py-32 bg-magic-purple text-white px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16 scroll-reveal">
-                <h2 class="text-5xl md:text-6xl font-black">Gallery of Wonders</h2>
-                <div class="h-2 w-40 bg-sun-yellow mx-auto mt-4 rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="group overflow-hidden rounded-[40px] h-80 relative scroll-reveal">
-                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-berry-pink opacity-0 group-hover:opacity-40 transition"></div>
-                </div>
-                <div class="group overflow-hidden rounded-[40px] h-80 relative mt-12 scroll-reveal">
-                    <img src="https://images.unsplash.com/photo-1510531704581-5b2870972060?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-sky-blue opacity-0 group-hover:opacity-40 transition"></div>
-                </div>
-                <div class="group overflow-hidden rounded-[40px] h-80 relative scroll-reveal">
-                    <img src="https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-grass-green opacity-0 group-hover:opacity-40 transition"></div>
-                </div>
-                <div class="group overflow-hidden rounded-[40px] h-80 relative mt-12 scroll-reveal">
-                    <img src="https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-sun-yellow opacity-0 group-hover:opacity-40 transition"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Admissions & Contact -->
-    <section id="admissions" class="py-32 px-4 relative bg-pattern">
-        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
-            <div class="lg:w-1/2 scroll-reveal">
-                <h2 class="text-6xl font-black mb-8">Ready to Join <br><span class="text-berry-pink">The Adventure?</span></h2>
-                <p class="text-xl text-gray-600 mb-10 leading-relaxed">
-                    Enrollment is open for the 2026 academic session! Limited spots are available in our Fitchlea Montessori Day Care and Pre-School. 
-                </p>
-                <div class="space-y-6">
-                    <div class="flex items-start gap-5">
-                        <div class="text-3xl">📝</div>
-                        <div>
-                            <h5 class="font-black text-xl">1. Online Form</h5>
-                            <p class="text-gray-500">Quick 2-minute application to register interest.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-5">
-                        <div class="text-3xl">🏠</div>
-                        <div>
-                            <h5 class="font-black text-xl">2. School Visit</h5>
-                            <p class="text-gray-500">Personal walkthrough of our magical campus.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-5">
-                        <div class="text-3xl">🎈</div>
-                        <div>
-                            <h5 class="font-black text-xl">3. Welcome Kit</h5>
-                            <p class="text-gray-500">Official induction and your child's first Fitchlea Montessori Day Care and Pre-School kit!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lg:w-1/2 w-full scroll-reveal">
-                <div class="bg-white p-10 rounded-[60px] border-8 border-sun-yellow shadow-2xl relative">
-                    <div class="absolute -top-12 -right-12 w-24 h-24 bg-orange-punch text-white rounded-full flex items-center justify-center text-4xl shadow-xl animate-float">
-                        📩
-                    </div>
-                    <h3 class="text-3xl font-black mb-8 text-center">Contact a Counselor</h3>
-                    <form class="space-y-6">
-                        <input type="text" placeholder="Your Full Name" class="w-full bg-gray-50 border-4 border-gray-100 rounded-3xl px-6 py-4 focus:border-magic-purple outline-none transition">
-                        <input type="email" placeholder="Email Address" class="w-full bg-gray-50 border-4 border-gray-100 rounded-3xl px-6 py-4 focus:border-magic-purple outline-none transition">
-                        <select class="w-full bg-gray-50 border-4 border-gray-100 rounded-3xl px-6 py-4 focus:border-magic-purple outline-none transition">
-                            <option>Which program are you interested in?</option>
-                            <option>Nursery</option>
-                            <option>Junior KG</option>
-                            <option>Senior KG</option>
-                        </select>
-                        <textarea placeholder="Tell us about your little one..." rows="4" class="w-full bg-gray-50 border-4 border-gray-100 rounded-3xl px-6 py-4 focus:border-magic-purple outline-none transition"></textarea>
-                        <button class="w-full grad-pink text-white font-black py-5 rounded-3xl text-xl shadow-lg hover:scale-105 transition">
-                            Submit Inquiry 🌈
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white pt-24 pb-12 px-4 rounded-t-[100px]">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 text-center md:text-left">
-            <div class="md:col-span-1">
-                <div class="flex items-center justify-center md:justify-start gap-3 mb-6">
-                    <div class="w-10 h-10 bg-sun-yellow rounded-full flex items-center justify-center text-xl">🎨</div>
-                    <span class="text-2xl font-black tracking-tighter">Fitchlea Montessori Day Care and Pre-School</span>
-                </div>
-                <p class="text-gray-400 leading-relaxed">Cultivating kindness, creativity, and courage in every child we nurture.</p>
-            </div>
-            <div>
-                <h4 class="text-xl font-bold mb-6 text-sky-blue">Explore</h4>
-                <ul class="space-y-3 text-gray-400 font-medium">
-                    <li><a href="#" class="hover:text-white transition">The Story</a></li>
-                    <li><a href="#" class="hover:text-white transition">Admissions</a></li>
-                    <li><a href="#" class="hover:text-white transition">Events</a></li>
-                    <li><a href="#" class="hover:text-white transition">Careers</a></li>
+<!-- About + values -->
+<section id="about" class="about-section">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>Discover <span style="color: var(--accent);">Fitchlea-Montessori-Day-Care-and-Pre-School</span></h2>
+                <p>Founded in 2012, our preschool is a warm, inclusive space where children ages 2-5 build social skills, early literacy, and a lifelong love of learning.</p>
+                <ul class="about-list">
+                    <li><i class="fas fa-check-circle"></i> Accredited early learning program</li>
+                    <li><i class="fas fa-apple-alt"></i> Organic snacks & allergy-aware kitchen</li>
+                    <li><i class="fas fa-chalkboard-user"></i> Inquiry-based & Reggio Emilia inspired</li>
+                    <li><i class="fas fa-child"></i> Emotional intelligence & mindfulness</li>
                 </ul>
+                <a href="#" class="btn btn-primary" style="background: var(--deep-teal);">Meet Our Team →</a>
             </div>
-            <div>
-                <h4 class="text-xl font-bold mb-6 text-grass-green">Contact</h4>
-                <ul class="space-y-3 text-gray-400 font-medium text-sm">
-                    <li>📍 5 Thaxted Road Fitchlea , Kwekwe, Zimbabwe</li>
-                    <li>📞 +263 77 267 0400-Fitchlea Montessori</li>
-                    <li>✉️ info@fitchleamontessori.edu</li>
-                </ul>
+            <div class="about-img">
+                <img src="https://placehold.co/600x500/f9e5c1/cf8f4a?text=Teacher+reading+to+kids" alt="Teacher reading to children">
             </div>
-            <div>
-                <h4 class="text-xl font-bold mb-6 text-berry-pink">Follow Us</h4>
-                <div class="flex justify-center md:justify-start gap-4">
-                    <a href="#" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-berry-pink transition"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sky-blue transition"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-magic-purple transition"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+</section>
+
+<!-- Programs -->
+<section id="programs" class="programs">
+    <div class="container">
+        <div style="text-align: center;">
+            <h2>Our programs</h2>
+            <p class="section-subhead">Tailored for each stage of early childhood development.</p>
+        </div>
+        <div class="program-cards">
+            <div class="program-item">
+                <span class="program-age">Toddlers (2-3 yrs)</span>
+                <h3>Little Sprouts 🌱</h3>
+                <p>Sensory play, first friendships, language blossoms — cozy and secure environment.</p>
+                <p style="margin-top: 1rem;"><strong>Ratio 1:4</strong> | Half/Full day</p>
+            </div>
+            <div class="program-item">
+                <span class="program-age">Preschool (3-4 yrs)</span>
+                <h3>Curious Cubs 🐻</h3>
+                <p>Pre-literacy, number adventures, creative expression & social collaboration.</p>
+                <p style="margin-top: 1rem;"><strong>Ratio 1:6</strong> | Extended care option</p>
+            </div>
+            <div class="program-item">
+                <span class="program-age">Pre-K (4-5 yrs)</span>
+                <h3>Rising Stars ⭐</h3>
+                <p>Kindergarten readiness, critical thinking, leadership & school transition support.</p>
+                <p style="margin-top: 1rem;"><strong>Special STEAM lab</strong> | 5 days/week</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Moments -->
+<section id="gallery" class="gallery">
+    <div class="container">
+        <div style="text-align: center;">
+            <h2>Joyful moments</h2>
+            <p class="section-subhead">A glimpse into our daily adventures, laughter, and discovery.</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="https://placehold.co/400x280/fdebd0/e07a3a?text=Art+Time" alt="Kids painting">
+                <div class="caption">🎨 Creativity in action</div>
+            </div>
+            <div class="gallery-card">
+                <img src="https://placehold.co/400x280/d9e6c6/5f8b4c?text=Outdoor+Play" alt="Garden play">
+                <div class="caption">🌿 Nature explorers</div>
+            </div>
+            <div class="gallery-card">
+                <img src="https://placehold.co/400x280/f7e1b5/c96f2c?text=Story+Circle" alt="Story circle">
+                <div class="caption">📖 Storytime magic</div>
+            </div>
+            <div class="gallery-card">
+                <img src="https://placehold.co/400x280/fadadd/b34e6e?text=Sensory+Play" alt="Sensory play">
+                <div class="caption">🧩 Learning through play</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Banner -->
+<div class="container">
+    <div class="cta">
+        <h2>Ready to begin the journey?</h2>
+        <p>Limited spots available for the upcoming session. Schedule a personal tour and meet our teachers.</p>
+        <a href="#" class="btn">Enroll today <i class="fas fa-smile-wink"></i></a>
+    </div>
+</div>
+
+<!-- Footer + contact -->
+<footer id="contact">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo" style="color: #f7bc45; background: none; -webkit-background-clip: unset;">🌼 Little Blossoms</div>
+                <p>Where childhood is cherished and every day is an opportunity to wonder.</p>
+                <div class="social-icons" style="margin-top: 1rem;">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 5 Thaxted Road Fitchlea , Kwekwe, Zimbabwe</p>
+                <p><i class="fas fa-phone-alt"></i> +263 77 267 0400-Fitchlea Montessori</p>
+                <p><i class="fas fa-envelope"></i> info@fitchleamontessori.edu</p>
+            </div>
+            <div class="footer-col">
+                <h4>Hours</h4>
+                <p>Mon - Fri: 8:00 AM – 4:30 PM</p>
+                <p>Extended care: 7:30 AM – 5:30 PM</p>
+                <p>Year-round programs + camps</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick links</h4>
+                <p><a href="#" style="color:#d9e0d4; text-decoration: none;">Admissions</a></p>
+                <p><a href="#" style="color:#d9e0d4; text-decoration: none;">Parent portal</a></p>
+                <p><a href="#" style="color:#d9e0d4; text-decoration: none;">Calendar</a></p>
+            </div>
         </div>
-        <div class="max-w-7xl mx-auto border-t border-gray-800 mt-20 pt-10 text-center text-gray-500 text-sm font-bold">
-            <p>&copy; 2026 Fitchlea Montessori Day Care and Pre-School. Made with 💖 for a brighter future.</p>
+        <div class="copyright">
+            © 2025 Fitchlea Montessori Day Care and Pre-School — nurturing hearts, growing minds.
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <script>
-        // Scroll Reveal Animation
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+<!-- tiny interactive element: replace placeholder images with emoji? but it's great. -->
 </body>
 </html>
